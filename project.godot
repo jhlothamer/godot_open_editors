@@ -14,6 +14,10 @@ config/name="Godot Open Editors"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[debug]
+
+gdscript/warnings/exclude_addons=false
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/open_editors/plugin.cfg", "res://addons/zylann.editor_debugger/plugin.cfg")
