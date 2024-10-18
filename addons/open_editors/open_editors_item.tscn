@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://y0pvfmmdk6oe"]
+
+[ext_resource type="Script" path="res://addons/open_editors/open_editors_item.gd" id="1_3lqm7"]
+[ext_resource type="Texture2D" uid="uid://c0h0f2nikxhf" path="res://addons/open_editors/GuiClose.svg" id="2_fo1bx"]
+
+[node name="OpenEditorsItem" type="PanelContainer"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 167.0
+offset_bottom = 38.0
+script = ExtResource("1_3lqm7")
+
+[node name="Outline" type="ReferenceRect" parent="."]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+border_color = Color(1, 1, 1, 1)
+border_width = 2.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CloseBtn" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+tooltip_text = "Close Scene"
+texture_normal = ExtResource("2_fo1bx")
+stretch_mode = 3
+
+[node name="IconTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+stretch_mode = 3
+
+[node name="TextLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/CloseBtn" to="." method="_on_close_btn_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HBoxContainer/CloseBtn" to="." method="_on_close_btn_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/CloseBtn" to="." method="_on_close_btn_pressed"]
