@@ -1,5 +1,5 @@
 @tool
-extends Panel
+extends Control
 
 const _ITEM_SCENE = preload("res://addons/open_editors/open_editors_item.tscn")
 
@@ -7,8 +7,10 @@ const _ITEM_SCENE = preload("res://addons/open_editors/open_editors_item.tscn")
 @onready var _items:VBoxContainer = %OpenEditorItems
 @onready var _refresh_timer:Timer = $RefreshTimer
 
+
 var _editor_tab_bar:TabBar
 var _prev_open_scenes:PackedStringArray = []
+var _filter := ""
 
 
 func _ready() -> void:
@@ -33,6 +35,7 @@ func _refresh_list() -> void:
 	for i in open_scenes.size():
 		var open_scene := open_scenes[i]
 		var filename = open_scene.get_file()
+		if not _filter.is_empty() and not filename.contains(_filter): continue
 		if filenames_to_indices.has(filename):
 			filenames_to_indices[filename].append(i)
 		else:
@@ -94,7 +97,9 @@ func _diff_from_prev(open_scenes:PackedStringArray) -> bool:
 func _get_editor_scene_tab_titles() -> PackedStringArray:
 	var titles:PackedStringArray = []
 	for i in _editor_tab_bar.tab_count:
-		titles.append(_editor_tab_bar.get_tab_title(i))
+		var tab_title := _editor_tab_bar.get_tab_title(i)
+		if _filter.is_empty() or tab_title.contains(_filter):
+			titles.append(tab_title)
 	return titles
 
 
@@ -119,4 +124,9 @@ func _get_editor_tab_bar() -> TabBar:
 
 
 func _on_refresh_timer_timeout() -> void:
+	_refresh_list()
+
+
+func _on_filter_line_edit_text_changed(new_text:String ) -> void:
+	_filter = new_text.strip_edges()
 	_refresh_list()

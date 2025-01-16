@@ -41,7 +41,6 @@ func _on_gui_input(event: InputEvent) -> void:
 	if mb.button_index == MOUSE_BUTTON_LEFT:
 		EditorInterface.open_scene_from_path(scene_path)
 	elif mb.button_index == MOUSE_BUTTON_RIGHT:
-		EditorInterface.open_scene_from_path(scene_path)
 		DisplayServer.clipboard_set(scene_path)
 		print("Path for scene copied to clipboard: %s" % scene_path)
 
