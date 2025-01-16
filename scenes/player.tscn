@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://qhub8sh67bqa"]
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "Player"

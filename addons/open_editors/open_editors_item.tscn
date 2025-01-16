@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://y0pvfmmdk6oe"]
+[gd_scene load_steps=4 format=3 uid="uid://y0pvfmmdk6oe"]
 
 [ext_resource type="Script" path="res://addons/open_editors/open_editors_item.gd" id="1_3lqm7"]
 [ext_resource type="Texture2D" uid="uid://c0h0f2nikxhf" path="res://addons/open_editors/GuiClose.svg" id="2_fo1bx"]
+[ext_resource type="Texture2D" uid="uid://da6q3xhq5khwq" path="res://addons/open_editors/PlayScene.svg" id="3_3s67d"]
 
 [node name="OpenEditorsItem" type="PanelContainer"]
 offset_left = 4.0
@@ -11,7 +12,6 @@ offset_bottom = 38.0
 script = ExtResource("1_3lqm7")
 
 [node name="Outline" type="ReferenceRect" parent="."]
-visible = false
 layout_mode = 2
 mouse_filter = 2
 border_color = Color(1, 1, 1, 1)
@@ -30,7 +30,6 @@ theme_override_constants/separation = 10
 
 [node name="CloseBtn" type="TextureButton" parent="MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 tooltip_text = "Close Scene"
 texture_normal = ExtResource("2_fo1bx")
@@ -44,10 +43,26 @@ stretch_mode = 3
 [node name="TextLabel" type="Label" parent="MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+text = "This is a test"
+
+[node name="PlaySceneBtn" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Play Scene"
+texture_normal = ExtResource("3_3s67d")
+stretch_mode = 3
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/CloseBtn" to="." method="_on_close_btn_mouse_entered"]
-[connection signal="mouse_exited" from="MarginContainer/HBoxContainer/CloseBtn" to="." method="_on_close_btn_mouse_exited"]
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/CloseBtn" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HBoxContainer/CloseBtn" to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/CloseBtn" to="." method="_on_close_btn_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/PlaySceneBtn" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HBoxContainer/PlaySceneBtn" to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/PlaySceneBtn" to="." method="_on_play_scene_btn_pressed"]

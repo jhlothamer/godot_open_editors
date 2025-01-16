@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0h0f2nikxhf"
-path="res://.godot/imported/GuiClose.svg-5648ec511d1d9a1990786ffa1fdb65b6.ctex"
+uid="uid://da6q3xhq5khwq"
+path="res://.godot/imported/PlayScene.svg-c2e34b5c20957b2de5299a10539cca5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/open_editors/GuiClose.svg"
-dest_files=["res://.godot/imported/GuiClose.svg-5648ec511d1d9a1990786ffa1fdb65b6.ctex"]
+source_file="res://addons/open_editors/PlayScene.svg"
+dest_files=["res://.godot/imported/PlayScene.svg-c2e34b5c20957b2de5299a10539cca5c.ctex"]
 
 [params]
 
