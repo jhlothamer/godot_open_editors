@@ -1,5 +1,5 @@
 # Godot Open Editors
-This add on introduces a new dock for the Godot Editor that lists the current open editors for your project.  With this list you can more easily find an open scene when you have many scenes open.  You can also close scenes from the list without having to find the scene's editor tab.
+This add on introduces a new dock for the Godot Editor that lists the current open editors for your project.  With this list you can more easily find an open scene when you have many scenes open.  You can also close and play scenes from the list without having to find the scene's editor tab as well as quickly copy the scene path with a click of the right mouse button.
 
 <p align="center">
 <img src="./readme_images/open_editors_in_action.png" />

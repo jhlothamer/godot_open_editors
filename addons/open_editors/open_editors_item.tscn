@@ -9,9 +9,12 @@ offset_left = 4.0
 offset_top = 4.0
 offset_right = 167.0
 offset_bottom = 38.0
+tooltip_text = "
+(right click to copy path)"
 script = ExtResource("1_3lqm7")
 
 [node name="Outline" type="ReferenceRect" parent="."]
+visible = false
 layout_mode = 2
 mouse_filter = 2
 border_color = Color(1, 1, 1, 1)
@@ -30,6 +33,7 @@ theme_override_constants/separation = 10
 
 [node name="CloseBtn" type="TextureButton" parent="MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 tooltip_text = "Close Scene"
 texture_normal = ExtResource("2_fo1bx")
@@ -44,10 +48,11 @@ stretch_mode = 3
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "This is a test"
+text_overrun_behavior = 3
 
 [node name="PlaySceneBtn" type="TextureButton" parent="MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 tooltip_text = "Play Scene"
 texture_normal = ExtResource("3_3s67d")

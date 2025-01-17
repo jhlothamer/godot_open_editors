@@ -22,9 +22,9 @@ func _ready() -> void:
 	_refresh_timer.start()
 
 
-func _refresh_list() -> void:
+func _refresh_list(force_update: bool = false) -> void:
 	var tab_titles = _get_editor_scene_tab_titles()
-	if !_diff_from_prev(tab_titles): return
+	if not _diff_from_prev(tab_titles) and not force_update: return
 
 	_clear()
 	
@@ -129,4 +129,4 @@ func _on_refresh_timer_timeout() -> void:
 
 func _on_filter_line_edit_text_changed(new_text:String ) -> void:
 	_filter = new_text.strip_edges()
-	_refresh_list()
+	_refresh_list(true)
