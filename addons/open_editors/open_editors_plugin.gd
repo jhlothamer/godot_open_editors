@@ -7,6 +7,7 @@ var _open_editors:Control
 
 func _enter_tree() -> void:
 	_open_editors = _OPEN_EDITORS_SCENE.instantiate()
+	_open_editors._created = true
 	add_control_to_dock(EditorPlugin.DOCK_SLOT_LEFT_UR, _open_editors)
 
 

@@ -7,8 +7,11 @@ extends Control
 var _editor_tab_bar:TabBar
 var _prev_open_scenes:PackedStringArray = []
 var _filter := ""
+# used to prevent changes to scene while editing
+var _created := false
 
 func _ready() -> void:
+	if !_created: return
 	_editor_tab_bar = _get_editor_tab_bar()
 	if !_editor_tab_bar:
 		printerr("Open Editors: could not find editor scen tab bar - please submit github issue")
