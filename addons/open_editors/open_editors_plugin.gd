@@ -1,12 +1,9 @@
 @tool
 extends EditorPlugin
 
-
-const _OPEN_EDITORS_SCENE = preload("res://addons/open_editors/open_editors.tscn")
-
+const _OPEN_EDITORS_SCENE = preload("uid://djrhxv5bx0bbw")
 
 var _open_editors:Control
-
 
 func _enter_tree() -> void:
 	_open_editors = _OPEN_EDITORS_SCENE.instantiate()

@@ -1,17 +1,12 @@
 @tool
 extends Control
 
-const _ITEM_SCENE = preload("res://addons/open_editors/open_editors_item.tscn")
-
-
 @onready var _items:VBoxContainer = %OpenEditorItems
 @onready var _refresh_timer:Timer = $RefreshTimer
-
 
 var _editor_tab_bar:TabBar
 var _prev_open_scenes:PackedStringArray = []
 var _filter := ""
-
 
 func _ready() -> void:
 	_editor_tab_bar = _get_editor_tab_bar()
@@ -65,7 +60,7 @@ func _refresh_list(force_update: bool = false) -> void:
 
 
 func _add_item(scene_path:String, display_name:String, icon:Texture2D) -> void:
-	var item:OpenEditorsItem = _ITEM_SCENE.instantiate()
+	var item := OpenEditorsItem.create()
 	item.scene_path = scene_path
 	item.display_name = display_name
 	item.icon = icon

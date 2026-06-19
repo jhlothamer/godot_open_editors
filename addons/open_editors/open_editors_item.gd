@@ -2,6 +2,7 @@
 class_name OpenEditorsItem
 extends PanelContainer
 
+static var _CLASS:PackedScene = preload("uid://y0pvfmmdk6oe")
 
 @onready var _outline:Control = $Outline
 @onready var _close_btn:TextureButton = %CloseBtn
@@ -9,14 +10,16 @@ extends PanelContainer
 @onready var _icon:TextureRect = %IconTextureRect
 @onready var _play_btn:TextureButton = %PlaySceneBtn
 
-
 var scene_path := ""
 var display_name := ""
 var editor_tab_bar:TabBar
 var icon:Texture2D
 
+# used to prevent changes to scene while editing
+var _created := false
 
 func _ready() -> void:
+	if !_created: return
 	_outline.visible = false
 	_label.text = display_name
 	tooltip_text = "%s\n(right click to copy path)" % scene_path
@@ -59,3 +62,9 @@ func _on_mouse_exited() -> void:
 
 func _on_play_scene_btn_pressed() -> void:
 	EditorInterface.play_custom_scene(scene_path)
+
+
+static func create() -> OpenEditorsItem:
+	var item:OpenEditorsItem = _CLASS.instantiate()
+	item._created = true
+	return item
