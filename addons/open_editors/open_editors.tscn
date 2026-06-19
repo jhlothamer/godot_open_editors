@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://djrhxv5bx0bbw"]
+[gd_scene format=3 uid="uid://djrhxv5bx0bbw"]
 
-[ext_resource type="Script" path="res://addons/open_editors/open_editors.gd" id="1_yyvqh"]
+[ext_resource type="Script" uid="uid://ddkt8ptsyp1ds" path="res://addons/open_editors/open_editors.gd" id="1_yyvqh"]
 [ext_resource type="Texture2D" uid="uid://cku1ojwekbsp0" path="res://addons/open_editors/Search.svg" id="2_aomn1"]
 
-[node name="OpenEditors" type="Control"]
+[node name="OpenEditors" type="Control" unique_id=1150712474]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yyvqh")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=390530377]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,17 +20,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FilterLineEdit" type="LineEdit" parent="VBoxContainer"]
+[node name="FilterLineEdit" type="LineEdit" parent="VBoxContainer" unique_id=1159568732]
 layout_mode = 2
 placeholder_text = "Filter Open Editors"
 clear_button_enabled = true
 right_icon = ExtResource("2_aomn1")
 
-[node name="Panel" type="Panel" parent="VBoxContainer"]
+[node name="Panel" type="Panel" parent="VBoxContainer" unique_id=516839210]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Panel"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Panel" unique_id=1045216122]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,43 +39,22 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Panel/PanelContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Panel/PanelContainer" unique_id=96879660]
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="OpenEditorItems" type="VBoxContainer" parent="VBoxContainer/Panel/PanelContainer/ScrollContainer"]
+[node name="OpenEditorItems" type="VBoxContainer" parent="VBoxContainer/Panel/PanelContainer/ScrollContainer" unique_id=1880524361]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = -5
 
-[node name="RefreshTimer" type="Timer" parent="."]
+[node name="RefreshTimer" type="Timer" parent="." unique_id=642211277]
 wait_time = 0.5
 
 [connection signal="text_changed" from="VBoxContainer/FilterLineEdit" to="." method="_on_filter_line_edit_text_changed"]
-[connection signal="gui_input" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48305" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48305" method="_on_gui_input"]
-[connection signal="mouse_entered" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48305" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48305" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48305" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48305" method="_on_mouse_exited"]
-[connection signal="gui_input" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48306" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48306" method="_on_gui_input"]
-[connection signal="mouse_entered" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48306" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48306" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48306" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48306" method="_on_mouse_exited"]
-[connection signal="gui_input" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48307" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48307" method="_on_gui_input"]
-[connection signal="mouse_entered" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48307" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48307" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48307" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48307" method="_on_mouse_exited"]
-[connection signal="gui_input" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48308" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48308" method="_on_gui_input"]
-[connection signal="mouse_entered" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48308" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48308" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48308" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48308" method="_on_mouse_exited"]
-[connection signal="gui_input" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48309" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48309" method="_on_gui_input"]
-[connection signal="mouse_entered" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48309" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48309" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48309" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48309" method="_on_mouse_exited"]
-[connection signal="gui_input" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48310" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48310" method="_on_gui_input"]
-[connection signal="mouse_entered" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48310" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48310" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48310" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48310" method="_on_mouse_exited"]
-[connection signal="gui_input" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48311" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48311" method="_on_gui_input"]
-[connection signal="mouse_entered" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48311" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48311" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48311" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48311" method="_on_mouse_exited"]
-[connection signal="gui_input" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48312" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48312" method="_on_gui_input"]
-[connection signal="mouse_entered" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48312" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48312" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48312" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/@PanelContainer@48312" method="_on_mouse_exited"]
+[connection signal="gui_input" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/OpenEditorsItem" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/OpenEditorsItem" method="_on_gui_input"]
+[connection signal="mouse_entered" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/OpenEditorsItem" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/OpenEditorsItem" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/OpenEditorsItem" to="VBoxContainer/Panel/PanelContainer/ScrollContainer/OpenEditorItems/OpenEditorsItem" method="_on_mouse_exited"]
 [connection signal="timeout" from="RefreshTimer" to="." method="_on_refresh_timer_timeout"]

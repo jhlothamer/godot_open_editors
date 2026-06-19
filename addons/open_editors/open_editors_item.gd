@@ -29,7 +29,7 @@ func _on_close_btn_pressed() -> void:
 	if !editor_tab_bar:
 		return
 	var open_scenes := EditorInterface.get_open_scenes()
-	var index = open_scenes.find(scene_path)
+	var index := open_scenes.find(scene_path)
 	if index >= 0:
 		editor_tab_bar.tab_close_pressed.emit(index)
 	queue_free()
@@ -56,5 +56,6 @@ func _on_mouse_exited() -> void:
 	_close_btn.modulate = Color.TRANSPARENT
 	_play_btn.modulate = Color.TRANSPARENT
 
-func _on_play_scene_btn_pressed():
+
+func _on_play_scene_btn_pressed() -> void:
 	EditorInterface.play_custom_scene(scene_path)

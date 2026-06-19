@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://qhub8sh67bqa"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=243116385]
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=990965940]
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 32

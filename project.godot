@@ -11,12 +11,15 @@ config_version=5
 [application]
 
 config/name="Godot Open Editors"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [debug]
 
-gdscript/warnings/exclude_addons=false
+gdscript/warnings/directory_rules={
+"res://addons": 1
+}
+gdscript/warnings/untyped_declaration=1
 
 [editor_plugins]
 

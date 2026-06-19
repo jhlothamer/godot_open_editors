@@ -23,7 +23,7 @@ func _ready() -> void:
 
 
 func _refresh_list(force_update: bool = false) -> void:
-	var tab_titles = _get_editor_scene_tab_titles()
+	var tab_titles := _get_editor_scene_tab_titles()
 	if not _diff_from_prev(tab_titles) and not force_update: return
 
 	_clear()
@@ -34,7 +34,7 @@ func _refresh_list(force_update: bool = false) -> void:
 	var filenames_to_indices := {}
 	for i in open_scenes.size():
 		var open_scene := open_scenes[i]
-		var filename = open_scene.get_file()
+		var filename := open_scene.get_file()
 		if not _filter.is_empty() and not filename.contains(_filter): continue
 		if filenames_to_indices.has(filename):
 			filenames_to_indices[filename].append(i)
@@ -52,14 +52,14 @@ func _refresh_list(force_update: bool = false) -> void:
 			_add_item(open_scenes[indices[0]], filename, _editor_tab_bar.get_tab_icon(indices[0]))
 			continue
 		
-		var file_extension = filename.get_extension()
+		var file_extension := filename.get_extension()
 		#sort by tab title
 		var tab_titles_for_filename:Array[String]= []
 		for index:int in indices:
 			tab_titles_for_filename.append(tab_titles[index])
 		tab_titles_for_filename.sort()
 		for tab_title in tab_titles_for_filename:
-			var index = tab_titles.find(tab_title)
+			var index := tab_titles.find(tab_title)
 			var display_text:String = tab_title if tab_title.ends_with(file_extension) else "%s.%s" % [tab_title, file_extension]
 			_add_item(open_scenes[index], display_text, _editor_tab_bar.get_tab_icon(index))
 
