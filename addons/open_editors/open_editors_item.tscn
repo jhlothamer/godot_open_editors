@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c0h0f2nikxhf" path="res://addons/open_editors/GuiClose.svg" id="2_fo1bx"]
 [ext_resource type="Texture2D" uid="uid://da6q3xhq5khwq" path="res://addons/open_editors/PlayScene.svg" id="3_3s67d"]
 
+[sub_resource type="Theme" id="Theme_lxw5d"]
+
 [node name="OpenEditorsItem" type="PanelContainer" unique_id=1990178842]
 offset_left = 4.0
 offset_top = 4.0
@@ -11,6 +13,7 @@ offset_right = 167.0
 offset_bottom = 38.0
 tooltip_text = "
 (right click to copy path)"
+theme = SubResource("Theme_lxw5d")
 script = ExtResource("1_3lqm7")
 
 [node name="Outline" type="ReferenceRect" parent="." unique_id=1225760271]
@@ -29,13 +32,11 @@ theme_override_constants/margin_right = 4
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="CloseBtn" type="TextureButton" parent="MarginContainer/HBoxContainer" unique_id=1898804253]
+[node name="CloseBtn" type="Button" parent="MarginContainer/HBoxContainer" unique_id=684191866]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(34, 0)
 layout_mode = 2
-tooltip_text = "Close Scene"
-texture_normal = ExtResource("2_fo1bx")
-stretch_mode = 3
+size_flags_vertical = 4
+icon = ExtResource("2_fo1bx")
 
 [node name="IconTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=695817364]
 unique_name_in_owner = true
@@ -49,13 +50,11 @@ size_flags_horizontal = 3
 text = "test_scene_name.tscn"
 text_overrun_behavior = 3
 
-[node name="PlaySceneBtn" type="TextureButton" parent="MarginContainer/HBoxContainer" unique_id=1247292293]
+[node name="PlaySceneBtn" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1411607709]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(34, 0)
 layout_mode = 2
-tooltip_text = "Play Scene"
-texture_normal = ExtResource("3_3s67d")
-stretch_mode = 3
+size_flags_vertical = 4
+icon = ExtResource("3_3s67d")
 
 [node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1933124611]
 visible = false

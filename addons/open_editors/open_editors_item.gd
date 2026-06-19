@@ -5,10 +5,10 @@ extends PanelContainer
 static var _CLASS:PackedScene = preload("uid://y0pvfmmdk6oe")
 
 @onready var _outline:Control = $Outline
-@onready var _close_btn:TextureButton = %CloseBtn
+@onready var _close_btn:Button = %CloseBtn
 @onready var _label:Label = %TextLabel
 @onready var _icon:TextureRect = %IconTextureRect
-@onready var _play_btn:TextureButton = %PlaySceneBtn
+@onready var _play_btn:Button = %PlaySceneBtn
 
 var scene_path := ""
 var display_name := ""
