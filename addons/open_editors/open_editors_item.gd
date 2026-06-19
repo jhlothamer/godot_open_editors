@@ -22,7 +22,7 @@ func _ready() -> void:
 	if !_created: return
 	_outline.visible = false
 	_label.text = display_name
-	tooltip_text = "%s\n(right click to copy path)" % scene_path
+	tooltip_text = "%s\n(right click - copy path,\nmiddle click - copy UID)" % scene_path
 	_close_btn.modulate = Color.TRANSPARENT
 	_play_btn.modulate = Color.TRANSPARENT
 	if icon: _icon.texture = icon
@@ -46,6 +46,10 @@ func _on_gui_input(event: InputEvent) -> void:
 	elif mb.button_index == MOUSE_BUTTON_RIGHT:
 		DisplayServer.clipboard_set(scene_path)
 		print("Path for scene copied to clipboard: %s" % scene_path)
+	elif mb.button_index == MOUSE_BUTTON_MIDDLE:
+		var uid := ResourceUID.path_to_uid(scene_path)
+		DisplayServer.clipboard_set(uid)
+		print("UID for scene '%s' copied to clipboard: %s" % [scene_path, uid])
 
 
 func _on_mouse_entered() -> void:
